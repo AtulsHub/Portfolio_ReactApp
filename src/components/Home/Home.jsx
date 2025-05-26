@@ -23,14 +23,14 @@ const Home = () => {
       <header className={`flex sticky top-0 z-20 items-center justify-between p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md ${darkMode ? 'dark' : ''}`}>
         <h1
           className="text-2xl font-bold cursor-pointer"
-          onClick={() => navigate("/")}
+          onClick={() => navigate('')}
         >
           My Portfolio
         </h1>
         <div className="flex justify-between items-center">
           <h1 className="md:mx-8  mx-4 text-xl cursor-pointer hover:underline "
-          onClick={()=>{}}
-           >Projects</h1>
+          onClick={()=>{navigate('/resume/projects')}}>
+           Projects</h1>
           <button
             className="bg-white text-blue-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-100 mr-2"
             onClick={() => {}}
@@ -79,7 +79,7 @@ const Home = () => {
             </p>
             <button
               className="bg-white w-32 mt-10 font-semibold py-2 px-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500  hover:from-blue-600  text-white shadow-md hover:bg-blue-600 hover:shadow-2xl"
-              onClick={() => {}}
+              onClick={() => {navigate('/resume')}}
             >
               Resume
             </button>
@@ -98,7 +98,9 @@ const Home = () => {
           <p className="text-lg leading-relaxed mb-6">
             Here are some of the skills I have mastered over the years:
           </p>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 cursor-pointer"
+          onClick={() => {navigate('/resume/skills')}}
+          >
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">JavaScript</li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">React</li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">
