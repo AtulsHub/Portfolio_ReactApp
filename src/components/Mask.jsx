@@ -100,7 +100,7 @@ const Mask = ({ item, closeMask }) => {
               )}
 
               <div>
-                {item.link && (
+                 
                   <button
                     disabled={!item.link}
                     className={`font-semibold py-2 px-4 rounded-full shadow-md ${
@@ -114,7 +114,7 @@ const Mask = ({ item, closeMask }) => {
                   >
                     {item.link ? "Go to Project" : "Currently Working"}
                   </button>
-                )}
+                
               </div>
             </div>
           </div>

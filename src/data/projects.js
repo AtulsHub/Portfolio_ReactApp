@@ -7,7 +7,7 @@ export const projects = [
     TechUsed: "react, Tailwind CSS, JavaScript",
     Features:
       "Gesture-based cursor movement, click simulation, real-time tracking",
-    link: "https://github.com/AtulsHub/Virtusal_Mouse_Pointer/tree/main",
+    link: "",
 
     dateEarned: "2024-12-02",
     images: [

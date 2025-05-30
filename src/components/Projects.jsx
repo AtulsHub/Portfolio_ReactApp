@@ -28,7 +28,7 @@ function Projects() {
                 Read more
               </span>
             </p>
-            {items.link && (
+            
               <button
                 className={`my-4 font-semibold py-2 px-4 rounded-full shadow-md ${
                   items.link
@@ -39,9 +39,9 @@ function Projects() {
 
                 // to use https://drive.google.com/uc?export=download&id=FILE_ID
               >
-                {items.link ? "Goto Project" : "currently working"}
+                {items.link ? "Goto Project" : "Currently working"}
               </button>
-            )}
+            
           </div>
           <div className="flex justify-center items-center w-full md:w-1/2 mx-auto">
             <img
