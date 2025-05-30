@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:"DM Serif Text", serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -42,4 +42,13 @@ ul {
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+@media (max-width: 768px) {
+  .mask::-webkit-scrollbar {
+    display: none;
+  }
+  .mask {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
 }

@@ -21,15 +21,15 @@ const SlidingSection = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         loop={true}
-        className="rounded-2xl"
+        className="rounded-2xl "
       >
         {achievements.map((item, index) => (
-          <SwiperSlide key={index} onClick={() => {navigate('/resume/achievements')}}>
+          <SwiperSlide key={index} onClick={() => navigate('/resume/achievements')} >
             <div className="relative w-full overflow-hidden rounded-2xl cursor-pointer ">
               {/* Background */}
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
+                style={{ backgroundImage: `url(${item.images[0]})` }}
               ></div>
 
               {/* Overlay */}
@@ -38,16 +38,16 @@ const SlidingSection = () => {
               {/* Content */}
               <div className="relative z-10 flex flex-col md:flex-row items-center text-white p-8 md:p-8 gap-6"
               onClick={() => {}}>
-                <div className="w-full md:w-1/2">
+                <div className="flex justify-center items-center w-full md:w-1/2">
                   <img
-                    src={item.image}
+                    src={item.images[0]}
                     alt={item.title}
-                    className="w-full  object-cover rounded-xl"
+                    className="w-auto h-[20rem] object-cover rounded-xl"
                   />
                 </div>
-                <div className="w-full md:w-1/2 text-left">
+                <div className="flex-col items-center justify-center w-full md:w-1/2 mx-auto">
                   <h2 className="text-2xl text-center md:text-3xl font-bold">{item.title}</h2>
-                  <p className="mt-4 hidden md:block md:text-base">{item.description}</p>
+                  <p className=" hidden md:block md:text-base mt-12 tracking-wider">{item.description}</p>
                 </div>
               </div>
             </div>

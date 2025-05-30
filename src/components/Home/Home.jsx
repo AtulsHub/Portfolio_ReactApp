@@ -1,41 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "../Cards/Card";
-import SlidingSection from "./Achievement";
-import {contactData} from './../../data/Contact.js';
- 
+import { contactData } from "./../../data/Contact.js";
+import { Header, SlidingSection, Card } from "../../components/index.js";
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   return (
     <>
-      {/* Header Section */}
-      <header className="flex sticky top-0 z-20 items-center justify-between p-4 shadow-md bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <h1
-          className="text-2xl font-bold cursor-pointer"
-          onClick={() => navigate("/")}
-        >
-          My Portfolio
-        </h1>
-        <div className="flex justify-between items-center">
-          <h1 className="md:mx-8  mx-4 text-xl cursor-pointer hover:underline "
-          onClick={()=>{navigate('/resume/projects')}}
-           >Projects</h1>
-          <button
-            className="font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-100 mr-2 "
-            onClick={() => {}}
-          >
-            Download CV
-          </button>
-        </div>
-      </header>
-
+      <Header className={"sticky top-0 z-20"} />
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row justify-center items-start transition-colors duration-300 bg-white"> 
-        <div className="flex flex-col md:flex-row relative my-8 w-full md:w-3/4 md:h-screen h-180 items-center justify-center shadow-2xl rounded-2xl text-center">
-          <div className="absolute inset-0 bg-cover md:w-1/2 h-2/5 md:h-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl bg-center"
-            style={{ backgroundImage: "url('./7b111cc7f2002815c7f81bdbe4f2b64c.jpg')" }}
+      <section className="flex flex-col md:flex-row justify-center items-start transition-colors duration-300 text-lg bg-white">
+        <div className="flex flex-col md:flex-row relative my-8 w-full md:w-3/4 md:h-screen h-190 items-center justify-center shadow-2xl rounded-2xl text-center">
+          <div
+            className="absolute inset-0 bg-cover md:w-1/2 h-2/5 md:h-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl bg-center"
+            style={{
+              backgroundImage: "url('./7b111cc7f2002815c7f81bdbe4f2b64c.jpg')",
+            }}
           ></div>
           <div className="relative md:w-1/2 md:h-screen h-2/5 "></div>
           <img
@@ -50,17 +31,29 @@ const Home = () => {
               <br /> I am Atul Sharma
             </h1>
             <br />
-            <p className="text-lg leading-relaxed md:w-4/5 mx-auto">
+            <p className="text-xl leading-relaxed md:w-4/5 mx-auto">
               A passionate developer with expertise in creating stunning web
               applications. My portfolio showcases my journey and achievements
               in the tech world.
             </p>
-            <button
-              className="bg-white w-32 mt-10 font-semibold py-2 px-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500  hover:from-blue-600  text-white shadow-md hover:bg-blue-600 hover:shadow-2xl"
-              onClick={() => {}}
-            >
-              Resume
-            </button>
+            <div className="flex w-full justify-center items-center mb-8">
+              <button
+                className="bg-white w-34 mt-8 mr-4 font-semibold py-2 px-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500  hover:from-blue-600  text-white shadow-md hover:bg-blue-600 hover:shadow-2xl"
+                onClick={() => {
+                  navigate("/resume");
+                }}
+              >
+                Resume
+              </button>
+              <button
+                className="bg-white w-34 mt-8 font-semibold py-2 px-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500  hover:from-blue-600  text-white shadow-md hover:bg-blue-600 hover:shadow-2xl"
+                onClick={() => {
+                  navigate("/resume/projects");
+                }}
+              >
+                Projects
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -70,18 +63,23 @@ const Home = () => {
       <SlidingSection />
 
       {/* Skills Section */}
-      <section className="py-16 px-8 transition-colors duration-300 bg-white text-gray-800"> 
+      <section className="py-16 px-8 transition-colors duration-300 bg-white text-gray-800 text-xl">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-4">Skills</h3>
-          <p className="text-lg leading-relaxed mb-6">
+          <p className="text-xl leading-relaxed mb-6">
             Here are some of the skills I have mastered over the years:
           </p>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 cursor-pointer"
-            onClick={() => {navigate('/resume/skills')}}
+          <ul
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 cursor-pointer"
+            onClick={() => {
+              navigate("/resume/skills");
+            }}
           >
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">JavaScript</li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">React</li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">TailwindCSS</li>
+            <li className="bg-gray-100 p-4 rounded-lg shadow-md">
+              TailwindCSS
+            </li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">Node.js</li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">Express</li>
             <li className="bg-gray-100 p-4 rounded-lg shadow-md">MongoDB</li>
@@ -90,11 +88,11 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-8 transition-colors duration-300 bg-gray-100 text-gray-800"> 
+      <section className="py-16 px-8 transition-colors duration-300 bg-gray-100 text-gray-800">
         <h3 className="text-3xl text-center font-bold mb-4">Contact Me</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center mt-12">
           {contactData.map((items, index) => (
-            <Card 
+            <Card
               key={index}
               name={items.name}
               icon={items.icon}
@@ -105,8 +103,8 @@ const Home = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="py-4 text-center transition-colors duration-300 bg-gray-800 text-white"> 
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      <footer className="py-4 text-center transition-colors duration-300 bg-gray-800 text-white">
+        <p></p>
       </footer>
     </>
   );

@@ -4,9 +4,9 @@ import Home from "./Home/Home";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Education from "./Education";
-import Contact from "./Contacts/Contacts";
 import Card from "./Cards/Card";
 import DetailPage from "./DetailPage";
+import Header from "./Header/Header";
 
 
 
@@ -17,8 +17,8 @@ export {
   Skills,
   Projects,
   Education,
-  Contact,
   Card,
-  DetailPage
+  DetailPage,
+  Header
   
 };
