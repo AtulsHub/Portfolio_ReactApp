@@ -1,6 +1,6 @@
 export const educationData = [
   {
-    degree: "Bachelor of Computer Application (B.Tech)",
+    degree: "Bachelor of Computer Application (B.C.A)",
     field: "Computer Applications",
     institution: "Patna College, Patna University",
     location: "Patna, Bihar",
