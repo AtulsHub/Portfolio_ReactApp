@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <ContactBall />
+      <ContactBall className="md:hidden" />
 
       <Routes>
         <Route

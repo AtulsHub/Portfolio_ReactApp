@@ -47,7 +47,7 @@ const SlidingSection = () => {
                 </div>
                 <div className="flex-col items-center justify-center w-full md:w-1/2 mx-auto">
                   <h2 className="text-2xl text-center md:text-3xl font-bold">{item.title}</h2>
-                  <p className=" hidden md:block md:text-base mt-12 tracking-wider">{item.description}</p>
+                  <p className=" hidden md:block md:text-base mt-12 tracking-wider text-justify">{item.description}</p>
                 </div>
               </div>
             </div>

@@ -5,12 +5,12 @@ import { useState } from 'react';
 import { contactData } from "../../data/Contact.js";
 
 
-const ContactBall = () => {
+const ContactBall = ({className}) => {
       const [showContacts, setShowContacts] = useState(false);
 
-      
+
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className={`fixed bottom-8 right-8 z-50 ${className}`} >
         {/* Contact Buttons */}
         <div className="relative flex-col ">
           {contactData.map((item, index) => {
@@ -22,7 +22,7 @@ const ContactBall = () => {
             return (
               <div
                 key={index}
-                className="md:hidden absolute bottom-1 right-1.5 transition-all duration-500 ease-out opacity-0"
+                className=" absolute bottom-1 right-1.5 transition-all duration-500 ease-out opacity-0"
                 style={{
                   transform: transformStyle,
                   opacity: showContacts ? 1 : 0,
@@ -32,7 +32,7 @@ const ContactBall = () => {
                 <img
                   src={item.iconColored}
                   alt={item.name}
-                  className="md:hidden w-14 h-14 bg-white rounded-full p-2 shadow-lg cursor-pointer"
+                  className=" w-14 h-14 bg-white rounded-full p-2 shadow-lg cursor-pointer"
                   onClick={() => window.open(item.path, "_blank")}
                 />
               </div>
@@ -41,7 +41,7 @@ const ContactBall = () => {
 
           {/* Main Button */}
           <div
-            className="md:hidden h-16 w-16 flex justify-center items-center rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 shadow-lg"
+            className=" h-16 w-16 flex justify-center items-center rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 shadow-lg"
             onClick={() => setShowContacts(!showContacts)}
           >
             {showContacts ? (
