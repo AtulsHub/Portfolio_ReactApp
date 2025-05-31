@@ -1,6 +1,7 @@
 {
   "name": "portfoio",
   "private": true,
+  "homepage": "https://atulshub.github.io/Portfolio_ReactApp",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
