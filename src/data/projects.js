@@ -6,7 +6,7 @@ export const projects = [
     TechUsed: "react, Tailwind CSS, JavaScript",
     Features:
       "Responsive design, project showcase, contact form, skills section etc.",
-    link: "",
+    link: "https://atulshub.github.io/Portfolio_ReactApp/",
 
     dateEarned: "2025-05-30",
     images: [
