@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   },
 ],
 {
-    basename: process.env.PUBLIC_URL, // 👈 this is the key!
+    basename: "/Portfolio_ReactApp", // 👈 this is the key!
   }
 );
 
