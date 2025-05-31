@@ -60,7 +60,7 @@ const Home = () => {
           <img
             src={about.profileImage}
             alt="Profile"
-            className="absolute z-10 top-2/7 w-40 h-40 md:w-48 md:h-48 p-3 rounded-full border-4 object-contain bg-[#d2d3dcf7] border-blue-400 shadow-md mb-2 md:mb-4 hover:scale-110 transition-transform duration-300"
+            className="absolute z-10 top-2/7 w-40 h-40 md:w-48 md:h-48 p-3 rounded-full border-2 object-contain bg-blue-200 shadow-2xl mb-2 md:mb-4 hover:scale-110 transition-transform duration-300"
           />
           <div className="absolute md:w-1/2 h-2/5 md:h-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl inset-0 bg-black opacity-50"></div>
           <div className="flex flex-col justify-center md:pl-18 md:py-4 pt-30 px-4 md:px-0 items-center w-full md:w-1/2 md:h-screen h-2/3 rounded-b-2xl md:rounded-bl-none md:rounded-r-2xl bg-blue-100 text-black">
