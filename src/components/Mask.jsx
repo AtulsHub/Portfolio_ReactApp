@@ -108,6 +108,7 @@ const Mask = ({ item, closeMask }) => {
                         ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:shadow-2xl"
                         : "bg-gradient-to-r from-gray-500 to-gray-400 opacity-60 cursor-not-allowed"
                     } text-white mr-2`}
+                    disable ={!item.link}
                     onClick={() =>
                       item.link && window.open(item.link, "_blank")
                     }

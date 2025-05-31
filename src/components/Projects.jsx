@@ -35,6 +35,7 @@ function Projects() {
                     ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:shadow-2xl"
                     : "bg-gradient-to-r from-gray-500 to-gray-400"
                 }  text-white mr-2`}
+                disabled={!items.link}
                 onClick={() => window.open(items.link, "_blank")}
 
                 // to use https://drive.google.com/uc?export=download&id=FILE_ID
