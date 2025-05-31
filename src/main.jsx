@@ -18,7 +18,11 @@ const router = createBrowserRouter([
     path: "/resume/:section/*",
     element: <App />,
   },
-]);
+],
+{
+    basename: process.env.PUBLIC_URL, // 👈 this is the key!
+  }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
