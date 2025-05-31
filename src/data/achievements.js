@@ -3,7 +3,7 @@ export const achievements = [
     id: 1,
     title: "Smart India Hackathon 2024 Finalist",
     description:
-      "Along with my team BitBrains, I was selected as a Grand Finale finalist in the prestigious Smart India Hackathon 2024 after four months of rigorous development.we developed an educational game under the problem statement provided by the Ministry of Earth Sciences and INCOIS. The game utilized real-time data from the INCOIS website to raise awareness about marine safety and oceanic conditions. Designed to be both engaging and informative, our solution aimed to educate users—especially coastal communities—on marine hazards, sustainable fishing, and ocean literacy.",
+      "Along with my team 'BitBrains', I was selected as a Grand Finale finalist in the prestigious Smart India Hackathon 2024 after four months of rigorous development.we developed an educational game under the problem statement provided by the Ministry of Earth Sciences and INCOIS. The game utilized real-time data from the INCOIS website to raise awareness about marine safety and oceanic conditions. Designed to be both engaging and informative, our solution aimed to educate users—especially coastal communities—on marine hazards, sustainable fishing, and ocean literacy.",
     dateEarned: "2024-12-02",
     images: [
       "https://res.cloudinary.com/dek7i9kwx/image/upload/v1748536006/1000037395_yqlmqj.jpg",
@@ -15,7 +15,7 @@ export const achievements = [
     id: 2,
     title: "Techphilia 8.0 - 2nd Place Winner",
     description:
-      "Our team 'BitBrains' secured the 2nd position at Techphilia 8.0 Hackathon held on April 22, 2025. We developed a solution to visualize and reduce the Urban Heat Island effect using geospatial machine learning, data visualization, and green infrastructure recommendations. The project received high praise for its innovation and impact.",
+      "Along with my team 'BitBrains', I secured the 2nd position at Techphilia 8.0 Hackathon held on April 22, 2025. We developed a solution to visualize and reduce the Urban Heat Island effect using geospatial machine learning, data visualization, and green infrastructure recommendations. The project received high praise for its innovation and impact.",
     dateEarned: "2025-04-22",
     images: [
       "https://res.cloudinary.com/dek7i9kwx/image/upload/v1748535697/IMG-20250424-WA0047_brafcr.jpg",

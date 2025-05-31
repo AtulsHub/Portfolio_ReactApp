@@ -1,40 +1,76 @@
 import React from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { contactData } from "./../../data/Contact.js";
-import { Header, SlidingSection, Card } from "../../components/index.js";
+import { 
+  Header, 
+  SlidingSection,
+   Card, 
+   ContactBall 
+  } from "../../components/index.js";
+import { about } from "../../data/about.js";
+
+
+
 
 const Home = () => {
   const navigate = useNavigate();
+  const [showContactBall, setShowContactBall] = useState(true);
+  const contactRef = useRef(null); // use only one ref
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowContactBall(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
+
       <Header className={"sticky top-0 z-20"} />
+      {showContactBall && <ContactBall />}
+      
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row justify-center items-start transition-colors duration-300 text-lg bg-white">
         <div className="flex flex-col md:flex-row relative my-8 w-full md:w-3/4 md:h-screen h-190 items-center justify-center shadow-2xl rounded-2xl text-center">
           <div
             className="absolute inset-0 bg-cover md:w-1/2 h-2/5 md:h-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl bg-center"
             style={{
-              backgroundImage: "url('./7b111cc7f2002815c7f81bdbe4f2b64c.jpg')",
+              backgroundImage: `url(${about.coverImage})`,
             }}
           ></div>
           <div className="relative md:w-1/2 md:h-screen h-2/5 "></div>
           <img
-            src="/vite.svg"
+            src={about.profileImage}
             alt="Profile"
-            className="absolute z-10 top-2/7 w-40 h-40 md:w-48 md:h-48 p-4 rounded-full border-4 bg-amber-50 border-blue-400 shadow-md mb-2 md:mb-4 hover:scale-110 transition-transform duration-300"
+            className="absolute z-10 top-2/7 w-40 h-40 md:w-48 md:h-48 p-3 rounded-full border-4 object-contain bg-[#d2d3dcf7] border-blue-400 shadow-md mb-2 md:mb-4 hover:scale-110 transition-transform duration-300"
           />
           <div className="absolute md:w-1/2 h-2/5 md:h-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl inset-0 bg-black opacity-50"></div>
           <div className="flex flex-col justify-center md:pl-18 md:py-4 pt-30 px-4 md:px-0 items-center w-full md:w-1/2 md:h-screen h-2/3 rounded-b-2xl md:rounded-bl-none md:rounded-r-2xl bg-blue-100 text-black">
             <h1 className="text-4xl font-bold mb-2">
               Hi,
-              <br /> I am Atul Sharma
+              <br /> I am {about.name}
             </h1>
             <br />
             <p className="text-xl leading-relaxed md:w-4/5 mx-auto">
-              A passionate developer with expertise in creating stunning web
-              applications. My portfolio showcases my journey and achievements
-              in the tech world.
+              {about.description}
             </p>
             <div className="flex w-full justify-center items-center mb-8">
               <button
@@ -74,21 +110,19 @@ const Home = () => {
             onClick={() => {
               navigate("/resume/skills");
             }}
-          >
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">JavaScript</li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">React</li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">
-              TailwindCSS
-            </li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">Node.js</li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">Express</li>
-            <li className="bg-gray-100 p-4 rounded-lg shadow-md">MongoDB</li>
+          >{about.skills.map((skill, index) => (
+            <li key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">{skill}</li>
+          )
+          )}
+          
           </ul>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-8 transition-colors duration-300 bg-gray-100 text-gray-800">
+      <section id="contact" ref={contactRef}
+       className="py-16 px-8 transition-colors duration-300 bg-gray-100 text-gray-800"
+       >
         <h3 className="text-3xl text-center font-bold mb-4">Contact Me</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center mt-12">
           {contactData.map((items, index) => (
@@ -103,9 +137,10 @@ const Home = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="py-4 text-center transition-colors duration-300 bg-gray-800 text-white">
+      <footer className=" py-4 text-center transition-colors duration-300 bg-gray-800 text-white">
         <p></p>
       </footer>
+      
     </>
   );
 };

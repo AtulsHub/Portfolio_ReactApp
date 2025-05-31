@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { projects } from "../data/projects";
-import Mask from "./Mask";
-import { Link } from "react-router-dom";
+import {Mask} from "./index.js";
 
 function Projects() {
   const [activeIndex, setActiveIndex] = useState(null); // holds the index of clicked item

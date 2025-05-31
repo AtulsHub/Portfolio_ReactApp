@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { about } from "../../data/about.js";
 
 const Header = ({ className }) => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Header = ({ className }) => {
             className="text-2xl md:text-3xl font-bold cursor-pointer mx-2"
             onClick={() => navigate("/")}
           >
-            Atul Sharma
+            {about.name}
           </h1>
 
           <div className="flex justify-between items-center">
@@ -32,7 +33,7 @@ const Header = ({ className }) => {
       </header>
       <p className=" bg-blue-600 text-white md:block md:text-xl text-lg italic px-4 py-4">
         {" "}
-        Web Developer | Designer | Creator
+        {about.degignation}
       </p>
     </>
   );

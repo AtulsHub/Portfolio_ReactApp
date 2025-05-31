@@ -1,6 +1,6 @@
 import { achievements } from "../data/achievements";
 import React, { useState } from "react";
-import Mask from "./Mask";
+import {Mask} from "./index.js";
 
 function Achievements() {
   const [activeIndex, setActiveIndex] = useState(null); // holds the index of clicked item

@@ -7,6 +7,8 @@ import Education from "./Education";
 import Card from "./Cards/Card";
 import DetailPage from "./DetailPage";
 import Header from "./Header/Header";
+import Mask from "./Mask";
+import ContactBall from "./Contact/ContactBall";
 
 
 
@@ -19,6 +21,8 @@ export {
   Education,
   Card,
   DetailPage,
-  Header
+  Header,
+  Mask,
+  ContactBall,
   
 };

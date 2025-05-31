@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { contactData } from "./data/Contact.js";
-import { IoIosArrowDown } from "react-icons/io";
-import { RiContactsLine } from "react-icons/ri";
+import { about } from "./data/about.js";
 
 import {
   Education,
@@ -13,13 +12,13 @@ import {
   Projects,
   Achievements,
   Header,
+  ContactBall,
 } from "./components/index.js";
 
 function App() {
   const { section } = useParams();
   const [activeSection, setActiveSection] = useState(section || "education");
   const [activeButton, setActiveButton] = useState(section || "education");
-  const [showContacts, setShowContacts] = useState(false);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -43,48 +42,7 @@ function App() {
 
   return (
     <>
-      <div className="fixed bottom-8 right-8 z-50">
-        {/* Contact Buttons */}
-        <div className="relative flex-col ">
-          {contactData.map((item, index) => {
-            const translateAmount = 70 * (index + 1); // Each icon moves further up
-            const transformStyle = showContacts
-              ? `translateY(-${translateAmount}px) scale(1)`
-              : `translateY(0px) scale(0)`;
-
-            return (
-              <div
-                key={index}
-                className="md:hidden absolute bottom-1 right-1.5 transition-all duration-500 ease-out opacity-0"
-                style={{
-                  transform: transformStyle,
-                  opacity: showContacts ? 1 : 0,
-                  transitionDelay: `${index * 100}ms`,
-                }}
-              >
-                <img
-                  src={item.iconColored}
-                  alt={item.name}
-                  className="md:hidden w-14 h-14 bg-white rounded-full p-2 shadow-lg cursor-pointer"
-                  onClick={() => window.open(item.path, "_blank")}
-                />
-              </div>
-            );
-          })}
-
-          {/* Main Button */}
-          <div
-            className="md:hidden h-16 w-16 flex justify-center items-center rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 shadow-lg"
-            onClick={() => setShowContacts(!showContacts)}
-          >
-            {showContacts ? (
-              <IoIosArrowDown className="text-white text-2xl" />
-            ) : (
-              <RiContactsLine className="text-white text-2xl" />
-            )}
-          </div>
-        </div>
-      </div>
+      <ContactBall />
 
       <Routes>
         <Route
@@ -99,12 +57,12 @@ function App() {
                     className={`hidden md:flex relative flex-col items-center p-6 mb-4 shadow-lg bg-gradient-to-r from-blue-300 to-blue-500 text-white`}
                   >
                     <img
-                      src="/vite.svg"
+                      src={about.profileImage}
                       alt="Profile"
                       className="w-16 h-16 md:w-32 md:h-32 rounded-full border-4 border-blue-400 shadow-md mb-2 md:mb-4 hover:scale-110 transition-transform duration-300"
                     />
                     <h1 className="text-xl md:text-3xl text-center font-extrabold tracking-wide">
-                      Atul Sharma
+                      {about.name}
                     </h1>
                     <div className="hidden md:flex md:flex-wrap md:justify-evenly w-full mt-4">
                       {contactData.map((items, index) => (
