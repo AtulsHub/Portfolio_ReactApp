@@ -13,6 +13,6 @@ export const about = {
         "Tailwind CSS",
     ],
     coverImage: "https://res.cloudinary.com/dek7i9kwx/image/upload/v1748675343/Create_a_productive_oasis_with_this_cozy_home_work_tws2ck.jpg",
-    profileImage: "https://res.cloudinary.com/dek7i9kwx/image/upload/v1748679204/pic1Edited_vgj3pt.jpg"
-    
+    profileImage: "https://res.cloudinary.com/dek7i9kwx/image/upload/v1748679204/pic1Edited_vgj3pt.jpg",
+    resumeLink: "https://drive.usercontent.google.com/u/2/uc?id=1hI-yYFLOYv-XE1vpmSFvOpxk8Wa1lkrY&export=download"
 }

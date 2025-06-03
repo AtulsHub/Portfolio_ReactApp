@@ -19,7 +19,7 @@ const Header = ({ className }) => {
           </h1>
 
           <div className="flex justify-between items-center">
-            <Link to="https://drive.google.com/uc?export=download&id=1iHwLHWgP98Nr3Jtg6h3WAIwIggqy7TyM">
+            <Link to={about.resumeLink}>
               <button
                 className="font-semibold py-2 px-4 rounded-full shadow-md bg-gradient-to-r from-blue-500 to-purple-500  hover:from-blue-600  text-white hover:bg-blue-600 hover:shadow-2xl mr-2 "
 
